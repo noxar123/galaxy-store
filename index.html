@@ -3,24 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我們的群組首頁</title>
+    <title>銀河商城</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f9f9f9; }
-        img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        .promo { color: #34495e; font-size: 1.2em; margin: 20px 0; }
-        .btn { display: inline-block; background-color: #5865F2; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 20px; }
+        /* 1. 動態流動背景 */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. 毛玻璃特效卡片 */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 80%;
+        }
+
+        /* 3. 發光呼吸 Logo */
+        img {
+            width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #fff; }
+            to { box-shadow: 0 0 30px #00d2ff; }
+        }
+
+        /* 4. 炫酷按鈕 */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
     </style>
 </head>
 <body>
 
-    <img src="logo.PNG" alt="群組Logo">
-
-    <h1>銀河商城群組</h1>
-
-    <p class="promo">這裡是最優質的帶儲商城，歡迎加入我們的社群，一起享受樂趣！</p>
-
-    <a href="https://discord.gg/yAbKFryqmt" class="btn">加入我們的 Discord</a>
+    <div class="card">
+        <img src="logo.PNG" alt="群組Logo">
+        <h1>銀河商城群組</h1>
+        <p>最優質的帶儲商城，盡在銀河</p>
+        <a href="https://discord.gg/yAbKFryqmt" class="btn">立即加入 Discord</a>
+    </div>
 
 </body>
 </html>
