@@ -3,81 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>銀河商城</title>
+    <title>銀河商城 | Cyberpunk</title>
     <style>
-        /* 1. 動態流動背景 */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            color: white;
+        /* 基礎設定 */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #050505; font-family: 'Segoe UI', sans-serif; }
+        
+        /* 霓虹背景動畫 */
+        .bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%); }
+        
+        /* 玻璃科技容器 */
+        .container {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 85%; max-width: 400px; padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px; text-align: center; color: #fff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* 呼吸發光 Logo */
+        img { 
+            width: 120px; height: 120px; border-radius: 50%; 
+            border: 2px solid #00f2ff;
+            box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff;
+            animation: pulse 2s infinite alternate;
         }
 
-        /* 2. 毛玻璃特效卡片 */
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            max-width: 80%;
-        }
+        @keyframes pulse { from { opacity: 0.8; transform: scale(1); } to { opacity: 1; transform: scale(1.05); } }
 
-        /* 3. 發光呼吸 Logo */
-        img {
-            width: 150px;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            animation: glow 2s infinite alternate;
-        }
+        /* 霓虹文字 */
+        h1 { margin: 20px 0; letter-spacing: 2px; text-transform: uppercase; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+        p { color: rgba(255, 255, 255, 0.7); font-size: 0.9em; }
 
-        @keyframes glow {
-            from { box-shadow: 0 0 10px #fff; }
-            to { box-shadow: 0 0 30px #00d2ff; }
-        }
-
-        /* 4. 炫酷按鈕 */
+        /* 科技感按鈕 */
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #00d2ff, #9d50bb);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
+            display: block; margin-top: 30px; padding: 15px;
+            background: transparent; color: #00f2ff;
+            border: 2px solid #00f2ff; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 1px;
         }
+        .btn:hover { background: #00f2ff; color: #000; box-shadow: 0 0 20px #00f2ff; }
 
-        .btn:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
+        /* 裝飾線條 */
+        .line { width: 50px; height: 2px; background: #00f2ff; margin: 10px auto; }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <img src="logo.PNG" alt="群組Logo">
-        <h1>銀河商城群組</h1>
-        <p>最優質的帶儲商城，盡在銀河</p>
-        <a href="https://discord.gg/yAbKFryqmt" class="btn">立即加入 Discord</a>
+    <div class="bg"></div>
+    <div class="container">
+        <img src="logo.PNG" alt="Logo">
+        <h1>YINHE MALL</h1>
+        <div class="line"></div>
+        <p>最高品質的服務，加入銀河商城吧！<br>加入我們，購買各種優質商品。</p>
+        <a href="https://discord.gg/yAbKFryqmt" class="btn">Connect Discord</a>
     </div>
 
 </body>
